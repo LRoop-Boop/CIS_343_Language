@@ -1,0 +1,34 @@
+// Test: Comments and whitespace.
+
+// Whitespace between tokens
+var x = 10
+var    y    =    20
+
+// Line comments
+var a = 1 // This comment comes after code.
+var b = 2
+// Another comment before code.
+var c = 3
+
+// Empty line comments
+//
+
+/* This entire comment should be ignored. */
+
+var d = 4
+
+/* A multiline
+   block comment
+   should also be ignored. */
+
+var e = 5
+
+// Comments between tokens and expressions
+var /* comment */ f = /* comment */ 6
+var result = 1 /* comment */ + /* comment */ 2
+
+/**/
+var g = 7/* comment */+/* comment */8
+var division = 10 / 2
+
+// Comment at the end of the file

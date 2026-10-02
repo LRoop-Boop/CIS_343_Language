@@ -1,4 +1,5 @@
 import sys
+from scanner import Scanner
 
 #Controls how scanner interprets different number of arguments.
 def main():
@@ -17,8 +18,13 @@ def main():
 def repl():
     while True:
         try:
-            print(input("> "))
-            print("Scanner Not Implemented")
+            source = (input("> "))
+            scanner = Scanner(source)
+            tokens = scanner.scan_tokens()
+
+            for token in tokens:
+                print(token.type, token.lexeme, token.literal, token.line)
+        
         #When the user presses ctrl C, break/leave repl mode.
         except KeyboardInterrupt:
             print()
@@ -28,8 +34,12 @@ def repl():
 def execute(filename):
     with open(filename, "r") as file:
         source = file.read()
-    print(source)
-    print("Scanner Not Implemented")
+    
+    scanner = Scanner(source)
+    tokens = scanner.scan_tokens()
+
+    for token in tokens:
+        print(token.type, token.lexeme, token.literal, token.line)
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,6 @@
+// Test: Unterminated block comments.
+
+/*
+   This comment continues
+   across multiple lines
+   but never closes.

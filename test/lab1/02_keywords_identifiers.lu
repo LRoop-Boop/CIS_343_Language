@@ -1,0 +1,16 @@
+// Test: Keywords and identifiers.
+
+// All reserved keywords
+and class else false for fun if nil or print return super this true var while
+
+// Basic valid identifiers
+hello
+_hello
+hello123
+my_variable
+_123
+
+// Identifiers that resemble keywords but are not keywords
+variable orchid while_loop andrew classroom elsewhere falsehood
+forest function iffy nil_value original printer return_value superman
+this_value true_value var_name

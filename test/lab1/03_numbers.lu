@@ -1,0 +1,38 @@
+// Test: Number literals.
+
+// Basic integers
+0
+1
+123
+999
+1000000
+
+// Decimal numbers
+0.0
+0.5
+1.0
+3.14
+123.456
+999.999
+
+// Leading-dot decimals
+.1
+.5
+.123
+.999
+
+// Scientific notation
+1e5
+1E5
+1.5e5
+1.5E5
+1e+5
+1e-5
+1.5e+10
+1.5e-10
+
+// Number boundaries and nearby tokens
+123.foo
+123.abc
+.123
+1.23.45

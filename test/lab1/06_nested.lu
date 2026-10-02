@@ -1,0 +1,21 @@
+// Test: Nested block comments.
+
+/* outer comment
+   /* inner comment */
+   still inside outer comment
+*/
+
+// Multiple levels of nesting
+/*
+   level 1
+   /*
+      level 2
+      /*
+         level 3
+      */
+      back to level 2
+   */
+   back to level 1
+*/
+
+/* outer /* inner 1 */ /* inner 2 */ outer again */

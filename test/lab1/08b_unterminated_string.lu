@@ -1,0 +1,7 @@
+// Test: Unterminated strings.
+
+// Unterminated multiline string
+"This string
+continues onto another line
+but never gets a closing quote
+

@@ -1,0 +1,23 @@
+// Test: String literals.
+
+// Basic strings
+"hello"
+"hello world"
+""
+"123"
+"special characters: ! @ # $ % ^ & * ( )"
+
+// Strings containing punctuation
+"hello, world."
+"if (x >= 100)"
+
+// Multiline strings
+"line one
+line two
+line three"
+
+// Supported escape sequences
+"newline:\nsecond line"
+"tab:\tindented"
+"quote: \"hello\""
+"backslash: \\"

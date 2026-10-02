@@ -1,0 +1,15 @@
+// Test: Integration.
+
+var name = "Lucy"
+var age = 20
+
+// comment
+var total = 10 + 20 * 3
+var average = total / 2
+var passed = true
+
+if (passed and !eligible) {
+    print "Ready"
+}
+
+var message = "Hello\nworld"

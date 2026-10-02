@@ -1,0 +1,8 @@
+// Test: Punctuation and operators.
+
+( ) { } , . - + ; * /
+
+! !=
+= ==
+< <=
+> >=
