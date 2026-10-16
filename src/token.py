@@ -1,11 +1,12 @@
 from enum import Enum
 
 class Token:
-    def __init__(self, token_type, lexeme, literal, line):
+    def __init__(self, token_type, lexeme, literal, line, column=1):
         self.type = token_type
         self.lexeme = lexeme
         self.literal = literal
         self.line = line
+        self.column = column
 
 class TokenType(Enum):
     LEFT_PAREN = "("

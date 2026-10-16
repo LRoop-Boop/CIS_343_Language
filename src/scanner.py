@@ -10,6 +10,7 @@ class Scanner:
         self.curr = 0
         self.line = 1
         self.column = 1
+        self.start_column = 1
 
         self.had_error = False
 
@@ -36,9 +37,10 @@ class Scanner:
         '''Call the scan token function and append EOF token to token list for return'''
         while not self.is_at_end():
             self.start = self.curr
+            self.start_column = self.column
             self.scan_token()
 
-        self.tokens.append(Token(TokenType.EOF, "", None, self.line))
+        self.tokens.append(Token(TokenType.EOF, "", None, self.line, self.column))
         return self.tokens
 
     def scan_token(self):
@@ -119,7 +121,7 @@ class Scanner:
         #---- start AI code ----
         #Add the newline character token for statement ending with line - 1, so that we count where the newline started and not where it ends.
         elif char == '\n':
-            self.add_token(TokenType.NEWLINE, line = self.line - 1)
+            self.add_token(TokenType.NEWLINE, line = self.line - 1, column=self.start_column)
         #---- end AI code ----
 
         else:
@@ -141,16 +143,18 @@ class Scanner:
 
         return curr_char
 
-    def add_token(self, token_type, literal=None, line=None):
+    def add_token(self, token_type, literal=None, line=None, column=None):
         '''Create a token for the lexeme and append it to the tokens list.'''
         lexeme = self.source[self.start:self.curr]
 
         #---- start AI code ----
         if line is None:
             line = self.line
+        if column is None:
+            column = self.start_column
         #---- end AI code ----
 
-        token = Token(token_type, lexeme, literal, line)
+        token = Token(token_type, lexeme, literal, line, column)
         self.tokens.append(token)
 
     #Use helper functions to look ahead without consuming characters, or check for a match.
